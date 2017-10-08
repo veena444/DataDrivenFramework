@@ -14,6 +14,9 @@ public class HomePage {
 	@FindBy(xpath="//*[@class='col-sm-6 col-md-8 hidden-xs video-banner']/h3")
 	public static WebElement HomePageText;
 	
+	@FindBy(linkText="Login")
+	public static WebElement Login;
+	
 	public HomePage(WebDriver driver){
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -30,6 +33,10 @@ public class HomePage {
 		catch(Throwable e){
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	public void homePageLogin(){
+		Login.click();
 	}
 
 }
